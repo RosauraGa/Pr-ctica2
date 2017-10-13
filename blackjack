@@ -1,0 +1,26 @@
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+int J=10;
+int K=10;
+int Q=10;
+int a=1;
+int A=11;
+int min=1;
+int max=13;
+int valor;
+char respuesta, suma;
+printf ("Quieres jugar jackblack  S/N  \n" );
+scanf ("%d",&respuesta);
+
+if (respuesta=='S' || 's'){
+    srand(time(NULL));
+    valor=min+rand()/(RAND_MAX/max-min+1)+1);
+    printf ("Tus cartas son: \n")
+}
+else (respuesta == 'N' || 'n'){
+     printf ("De lo que te pierdes" );
+}
+
+ 	return 0;
+}
