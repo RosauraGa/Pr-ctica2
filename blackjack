@@ -1,4 +1,3 @@
-#include <iostream>
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,6 +18,7 @@ int c1,c2,c3;
 int flag=1;
 int c4,c5,c6;
 int a=0, b=0, c=0;
+int suma2;
 srand(time(NULL));
 char respuesta, respuesta1;
 printf ("Quieres jugar jackblack  S/N  \n" );
@@ -35,6 +35,9 @@ if (respuesta=='S' || 's'){
     }
     c2=baraja[j];
     baraja[j]=0;
+    k=rand()%52;
+    c3=baraja[k];
+    baraja[k]=0;
     if (c1==1 && c2==1){
     	flag=1;
     	while (flag==1){
@@ -84,9 +87,9 @@ if (respuesta=='S' || 's'){
     printf("La suma de las caratas es: %d \n", suma);
     while (suma<=21 && flag==1){
     	printf ("Quieres otra carta S/N \n");
-    	scanf ("%c", & respuesta1);
+    	scanf ("%s", & respuesta1);
     	getchar ();
-    	if (respuesta1=='s' || respuesta=='S'){
+    	if (respuesta1=='s' || respuesta1=='S'){
     		suma+=c3;
     		printf ("Ahora la suma de tus cartas es: %d \n", suma);
     	}
@@ -111,18 +114,40 @@ if (respuesta=='S' || 's'){
     	else {
     		if (suma==21){
     		printf ("Ganaste, sigue el otro man \n");
+    		printf ("Las cartas del diller son: \n");
+    		a=rand()%52;
+ 		   c4=baraja[a];
+ 		   baraja[a]=0;
+ 		   b=rand()%52;
+ 		   while (a==b){
+    		b=rand()%52;	
+		}	
+    		c5=baraja[b];
+    		baraja[b]=0;
 			}
 			else {
 				if (suma<21){
 					printf("La suma de tus cartas fue: %d \n", suma);
 					printf("Turno  del otro man \n");
+					printf ("Las cartas del diller son: \n");
+					a=rand()%52;
+ 		   			c4=baraja[a];
+ 		   			baraja[a]=0;
+ 		   			b=rand()%52;
+ 		   			while (a==b){
+    				b=rand()%52;	
+					}	
+    				c5=baraja[b];
+    				baraja[b]=0;
+    				printf("%d,%d \n", c4,c5);
 					
 				}
 			}
     	
     	}
-    	 
+    	    	 
     	}
+    	
     	
     	
     }
